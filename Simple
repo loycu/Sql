@@ -1,4 +1,5 @@
 ref:https://www.runoob.com/sql/sql-exists.html
+practice:https://www.lintcode.com/problem/2045/
 班级,学号(pk),分数,95分以上人数在三个以上的班级
 select * from table where score> 95 group by class having count(*)>3
 子查询也可以实现但是不优雅
