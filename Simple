@@ -1,2 +1,2 @@
 班级,学号(pk),分数,95分以上人数在三个以上的班级
-select * from table where score> 95 and having count(class)>3
+select * from table where score> 95 group by class having count(class)>3
