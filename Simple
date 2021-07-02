@@ -1,2 +1,14 @@
 班级,学号(pk),分数,95分以上人数在三个以上的班级
-select * from table where score> 95 group by class having count(class)>3
+select * from table where score> 95 group by class having count(*)>3
+子查询也可以实现但是不优雅
+
+select --> from --> where --> group by --> having --> order by 
+group by having 很重要,他是实现聚合搜索的前提,先吧记录的集合分成多个组,然后通过having过滤查询出多个或者一个
+也就是说,from where 只是初次根据某个或者几个列过滤,他的结果可能是单个或者是多个记录
+group by having count() 根据分组某一字段符合数量条件
+group by 和聚合函数配合,它是将结果合并起来
+
+
+sum计算列数字和,count计算行数,sum如果计算为Null,也就是没有记录累计,则返回null,如果需要返回0则如下
+IFNULL(sum(user_id),0) 
+
